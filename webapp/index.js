@@ -1,6 +1,11 @@
 sap.ui.require(
-  ["sap/m/Text", "sap/ui/model/json/JSONModel", "sap/ui/core/mvc/XMLView"],
-  function (Text, JSONModel, XMLView) {
+  [
+    "sap/m/Text",
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/core/mvc/XMLView",
+    "sap/ui/model/BindingMode",
+  ],
+  function (Text, JSONModel, XMLView, BindingMode) {
     "use strict";
 
     // Attach an anonymous function to the SAPUI5 'init' event
@@ -11,6 +16,8 @@ sap.ui.require(
         lastName: "Hawk",
         enabled: true,
       });
+
+      oModel.setDefaultBindingMode(BindingMode.OneWay);
 
       sap.ui.getCore().setModel(oModel);
 
