@@ -15,6 +15,12 @@ sap.ui.require(
         firstName: "Harry",
         lastName: "Hawk",
         enabled: true,
+        address: {
+          street: "Somestreet 1",
+          city: "Anyville",
+          zip: "42",
+          country: "Neverland",
+        },
       });
 
       const oResourceModel = new ResourceModel({
