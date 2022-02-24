@@ -21,6 +21,8 @@ sap.ui.require(
           zip: "42",
           country: "Neverland",
         },
+        salesAmount: 12345.6789,
+        currencyCode: "EUR",
       });
 
       const oResourceModel = new ResourceModel({
@@ -35,9 +37,13 @@ sap.ui.require(
 
       sap.ui.getCore().setModel(oResourceModel, "i18n");
 
-      new XMLView({
+      const oView = new XMLView({
         viewName: "sap.ui.demo.db.view.App",
-      }).placeAt("content");
+      });
+
+      sap.ui.getCore().getMessageManager().registerObject(oView, true);
+
+      oView.placeAt("content");
     });
   }
 );
