@@ -1,0 +1,15 @@
+{
+  "name": "sapui5-data-binding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ui5 serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ui5/cli": "^2.14.6"
+  }
+}
