@@ -1,6 +1,7 @@
 <mvc:View
 	controllerName="sap.ui.demo.db.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
 	xmlns="sap.m"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:l="sap.ui.layout"
@@ -90,10 +91,24 @@
 	>
 		<content>
 			<List
+				id="ProductList"
 				headerText="{i18n>productListTitle}"
-				items="{products>/Products}"
+				items="{
+					path: 'products>/Products',
+					factory: '.productListFactory'
+				}"
 			>
-				<ObjectListItem
+				<dependents>
+					<core:Fragment
+						fragmentName="sap.ui.demo.db.view.ProductSimple"
+						type="XML"
+					/>
+					<core:Fragment
+						fragmentName="sap.ui.demo.db.view.ProductExtended"
+						type="XML"
+					/>
+				</dependents>
+				<!-- <ObjectListItem
 					press=".onItemSelected"
 					type="Active"
 					title="{products>ProductName}"
@@ -127,7 +142,7 @@
 							}"
 						/>
 					</attributes>
-				</ObjectListItem>
+				</ObjectListItem> -->
 			</List>
 		</content>
 	</Panel>
