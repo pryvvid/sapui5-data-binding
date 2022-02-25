@@ -27,6 +27,7 @@ sap.ui.require(
         },
         salesAmount: 12345.6789,
         currencyCode: "EUR",
+        priceThreshold: 20,
       });
 
       const oResourceModel = new ResourceModel({
